@@ -1,4 +1,4 @@
-# Regex Tutorial
+# URL Regex Tutorial
 
 * Matching a URL: `/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/`
 
@@ -22,6 +22,7 @@ A regular expression is defined as a string representing a pattern used for matc
 ## Regex Components
 
 ### Anchors
+
 - '^'
 
 - '$'
@@ -29,6 +30,7 @@ A regular expression is defined as a string representing a pattern used for matc
 Anchors are used inorder to mark the beggining and the end of the expression. In the case of this regex, the carrot symbol, '^' marking the beggining of the statement and the dollar sign '$', marking the end of the expression. 
 
 ### Quantifiers
+
 - '?'
 
 - (*)
@@ -36,6 +38,8 @@ Anchors are used inorder to mark the beggining and the end of the expression. In
 - (+)
 
 - {2,6}
+
+Quantifiers are used to identify the amount of time an expression will be identified. The question mark '?' indicates that the previous character will occur once optionally. '(https?:\/\/)?' contains two question marks '?'. The first instance of a question mark '?' is in reference to the 's' meaning that a URL can begin with either 'http' or 'https'. the second question mark '?' which comes after all of the characters in the parentheses '()' indicates that a URL can begin with neither. i.e. 'www'. 
 
 
 ### Grouping Constructs

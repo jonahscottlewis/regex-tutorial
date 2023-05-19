@@ -15,7 +15,6 @@ A regular expression is defined as a string representing a pattern used for matc
 - [Grouping Constructs](#grouping-constructs)
 - [Bracket Expressions](#bracket-expressions)
 - [Character Classes](#character-classes)
-- [The OR Operator](#the-or-operator)
 - [Flags](#flags)
 - [Character Escapes](#character-escapes)
 
@@ -44,28 +43,47 @@ Quantifiers are used to identify the amount of time an expression will be identi
 
 ### Grouping Constructs
 
-- '(https?:\/\/)?'
+- '^(https?:\/\/)?'
+
+- '([\da-z\.-]+)\'
+
+- '([a-z\.]{2,6})'
+
+- '([\/\w \.-]*)*'
+
+Grouping Constructs seperate characters in a RegEx into groups. These characters are grouped inbetween '()'. In this ReGex, there are 4 different groups seen above.
 
 ### Bracket Expressions
 
+- '[\da-z\.-]'
+
 - '[a-z\.]'
-
-### Character Classes
-
-- '[\da-z\.-]+'
 
 - '[\/\w \.-]'
 
+Bracket expressions contain the range of characters being searched for in an expression. Within this RegEx, there are 3 bracket expressions seen in order of appearance above. The first, '[\da-z\.-]' includes a lowercase a-z, a '.', and a '-'. Next, '[a-z\.]' will include a lowercase a-z and a '.'. Last, '[\/\w \.-]' has a '/', any character 'a-z, A-Z, 0-9' a '.' and a '-'.
 
-### The OR Operator
+### Character Classes
 
-- '[]'
+- '[\da-z\.-]'
+
+- '[\/\w \.-]'
+
+Character classes define a set of characters that can occur within a string in a regular expression. '/d' defines any digit '0-9' and is used in the first bracket expression '[\da-z\.-]. '/w' defines any word character 'a-z, A-Z, 0-9' and is used in the second bracket expression '[\/\w \.-]'.
 
 ### Flags
 
-- 
+- '//'
+
+The regex is enclosed by two / characters with no flags. Since multi-line is not enabled (by following the ending / with an m), the anchors match a string instead of the start and end of a line.
 
 ### Character Escapes
+
+- '/'
+
+- '.'
+
+Character escapes are characters followed by a `\` to indicate that they are interpreted literally and not part of an expression.  In this RegEx, `.` and `/` are used several times as escaped characters, indicating that they are used literally as a `.` and a `/`.In the first group `(https?:\/\/)`, `/` is used twice at the end literally. In the second group `([\da-z\.-]+)`, `.` is used literally. between the second and the third group, `\.` is included to use a `.` literally. In the third group `([a-z\.]{2,6})`, `.` is used literally. In the fourth group, `([\/\w \.-]*)`, both `/` and `.` are used literally. After the fourth group, a `/` is used literally.
 
 ## Author
 
